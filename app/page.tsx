@@ -1,17 +1,17 @@
-"use client";
+import { getServerSession } from "next-auth";
 import { useSession } from "next-auth/react";
 
-export default function Home() {
-  const { data: session } = useSession();
+export default async function Home() {
+  const session = await getServerSession()
   return (
     <>
       {session && (
-        <div>
-          <p>Добро пожаловать в кабинет</p>
+        <div className="bg-white rounded p-6 text-center">
+          <p>Добро пожаловать в кабинет.</p>
           <p>Ваш email: {session?.user?.email}</p>
         </div>
       )}
-      {!session && <div>Войдите или зарегистрируйтесь</div>}
+      {!session && <div className="bg-white rounded p-6 text-center">Войдите или зарегистрируйтесь.</div>}
     </>
   );
 }

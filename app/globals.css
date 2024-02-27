@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  background-image: url("../public/images/background.webp");
+  background-image: url("_assets/images/background.webp");
   background-position: 45% 0%;
 }
 
@@ -12,32 +12,33 @@ a:hover {
 }
 
 input {
-  @apply border-b-2 border-[#ebeaea];
+  @apply border-b-[3px] border-[#ebeaea];
 }
 
 input::placeholder {
   @apply italic text-[#b1b1b1];
 }
 
-input[id="checkbox"] {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  -o-appearance: none;
-  outline: none;
-  content: none;
+
+input[type="email"] {
+  padding-left:40px;
+  background: url("_assets/images/profile.png") no-repeat 1px -0.5px;
+  background-size: 18px;
 }
 
-input[id="checkbox"]:before {
-  font-size: 15px;
-  content: "X";
-  color: transparent !important;
-  display: block;
-  width: 16px;
-  height: 16px;
-  border: 2px solid #49b6d7;
-  border-radius: 2px;
+input[type="password"] {
+  padding-left:40px;
+  background: url("_assets/images/lock.png") no-repeat 1px -0.5px;
+  background-size: 20px;
 }
 
-input[id="checkbox"]:checked:before {
-  color: black !important;
+input[name="role"] {
+  padding-left:40px;
+  background: url("_assets/images/role.png") no-repeat 1px -0.5px;
+  background-size: 20px;
+}
+
+.formErrors {
+  @apply font-light text-[12px] text-red-600 text-center;
+  margin: 0 !important; 
 }
